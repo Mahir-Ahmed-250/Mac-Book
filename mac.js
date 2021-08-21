@@ -83,3 +83,30 @@ document.getElementById("delivery1-btn").addEventListener('click', function () {
 document.getElementById("delivery2-btn").addEventListener('click', function () {
     deliveryCost('Aug20');
 })
+
+
+// Apply Promo Code
+
+const promoCode = "stevekaku"
+document.getElementById("promo-btn").addEventListener("click", function () {
+    const promoCodeInput = document.getElementById("promo-input");
+    const promoCodeInputValue = promoCodeInput.value.toLowerCase();
+    if (promoCodeInputValue == promoCode) {
+
+        const price = document.getElementById("total-cost");
+        const totalPrice = price.innerText;
+
+        const discountAmount = totalPrice * 0.2;
+        const finalPrice = totalPrice - discountAmount;
+
+        const bottomPrice = document.getElementById("bottom-total");
+        bottomPrice.innerText = finalPrice;
+
+        promoCodeInput.value = "";
+    } else if (promoCodeInputValue == "") {
+        alert("Opps! No Promo Code Found");
+    }
+    else {
+        alert("Invalid Promo Code");
+    }
+});
