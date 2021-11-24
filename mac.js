@@ -110,3 +110,4 @@ document.getElementById("promo-btn").addEventListener("click", function () {
         alert("Invalid Promo Code");
     }
 });
+
